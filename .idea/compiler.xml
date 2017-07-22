@@ -4,8 +4,6 @@
     <bytecodeTargetLevel>
       <module name="server_main" target="1.8" />
       <module name="server_test" target="1.8" />
-      <module name="wedding_main" target="1.8" />
-      <module name="wedding_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

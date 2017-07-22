@@ -1,5 +1,4 @@
 .gradle
-build/
 !gradle/wrapper/gradle-wrapper.jar
 
 # IntelliJ
@@ -22,5 +21,3 @@ build/
 
 ## File-based project format:
 *.iws
-
-/out/
