@@ -1,0 +1,21 @@
+plugins {
+    id "com.moowork.node" version "1.2.0"
+}
+
+task build(type: YarnTask) {
+    inputs.files(fileTree('node_modules'))
+    inputs.files(fileTree('src'))
+    inputs.files(fileTree('public'))
+    inputs.file('package.json')
+    inputs.file('tsconfig.json')
+
+    outputs.dir('build')
+
+    dependsOn yarn_install
+    args = ['run', 'build']
+}
+
+task test(type: YarnTask) {
+    dependsOn yarn_install
+    args = ['test']
+}

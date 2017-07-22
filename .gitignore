@@ -21,3 +21,5 @@
 
 ## File-based project format:
 *.iws
+
+/build/
