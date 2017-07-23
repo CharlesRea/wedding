@@ -1,0 +1,19 @@
+.hero-image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%
+}
+
+.hero-title {
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}

@@ -176,7 +176,7 @@ module.exports = {
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
-        test: /\.(css|scss)$/,
+        test: /\.scss$/,
         use: [
           require.resolve('style-loader'),
           {
@@ -203,8 +203,13 @@ module.exports = {
               ],
             },
           },
-          require.resolve('sass-loader'),
-        ],
+          {
+            loader: require.resolve('sass-loader'),
+            options: {
+              includePaths: ['./node_modules']
+            },
+          },
+        ]
       },
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.
