@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './HeroImage.scss';
-import {WeddingSection} from "./WeddingSection";
+import {WeddingSection} from "./components/WeddingSection";
 const imageSource = require('./images/heroImage.png');
 
 export const HeroImage = () => (
