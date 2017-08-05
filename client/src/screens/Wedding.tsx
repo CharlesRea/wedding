@@ -1,7 +1,7 @@
 import * as React from "react";
-import {HeroImage} from "./Wedding/HeroImage";
-import {WhenAndWhere} from "./Wedding/WhereAndWhen";
-import {Rsvp} from "./Wedding/Rsvp";
+import {HeroImage} from "./wedding/HeroImage";
+import {WhenAndWhere} from "./wedding/WhereAndWhen";
+import {Rsvp} from "./wedding/Rsvp";
 
 export const Wedding = () => (
   <div className="Wedding">
