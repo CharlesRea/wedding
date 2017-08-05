@@ -9,8 +9,11 @@ export const HeroImage = () => (
       <div className="hero-content">
         <div className="hero-title">
           <h1>
-            Charles' and Harriet's wedding
+            Charles and Harriet's wedding
           </h1>
+          <h2>
+            11th November, Bristol
+          </h2>
         </div>
       </div>
     </div>
