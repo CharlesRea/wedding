@@ -1,2 +1,5 @@
 authentication:
   key: imasecretkey
+server:
+  servlet:
+    context-path: /api

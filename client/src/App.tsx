@@ -1,10 +1,13 @@
 import * as React from 'react';
-import './App.scss';
+import 'antd/dist/antd.css';
 import {Wedding} from "./screens/Wedding";
+import {RequiresAuthentication} from "./screens/RequiresAuthentication";
 
 const App = () => (
   <div>
-    <Wedding />
+    <RequiresAuthentication >
+      <Wedding />
+    </RequiresAuthentication>
   </div>
 );
 

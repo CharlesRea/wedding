@@ -25,6 +25,7 @@ class OAuthAuthorizationServerConfig(val authenticationManager: AuthenticationMa
         config
                 .tokenKeyAccess("permitAll()")
                 .checkTokenAccess("isAuthenticated()")
+                .allowFormAuthenticationForClients()
     }
 
     override fun configure(clients: ClientDetailsServiceConfigurer) {

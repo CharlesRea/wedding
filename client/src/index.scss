@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Hind+Siliguri');
+@import "styles/fontSizes";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Hind Siliguri', sans-serif;
+  font-size: $regular;
 }
