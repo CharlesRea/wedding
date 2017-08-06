@@ -34,7 +34,7 @@ class OAuthAuthorizationServerConfig(val authenticationManager: AuthenticationMa
                 .withClient("website")
                 .authorizedGrantTypes("password", "refresh_token")
                 .scopes("all")
-                .accessTokenValiditySeconds(3600)
+                .accessTokenValiditySeconds(60 * 60 * 14)
     }
 
     @Bean

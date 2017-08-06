@@ -9,8 +9,12 @@ import org.springframework.security.config.annotation.authentication.configurers
 open class AuthenticationConfig : GlobalAuthenticationConfigurerAdapter() {
     override fun init(auth: AuthenticationManagerBuilder) {
         auth.inMemoryAuthentication()
-                .withUser("password")
-                .password("password")
-                .roles("USER")
+                    .withUser("day")
+                    .password("day")
+                    .roles("DAY")
+                .and()
+                    .withUser("evening")
+                    .password("evening")
+                    .roles("EVENING")
     }
 }

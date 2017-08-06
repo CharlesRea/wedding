@@ -59,10 +59,10 @@ class Login extends React.Component<FormLoginProps, State> {
         <div className="login-section">
           <div className="content">
             <SectionTitle title="Harriet and Charles's wedding" />
-            <p className="info-text">
+            <div className="info-text">
               {serverError == null ? `Please log in using the password from your invite. If you've lost your password, get in touch with us.` :
                 <ErrorText>{errorText}</ErrorText>}
-            </p>
+            </div>
             <Form className="login-form" onSubmit={this.handleSubmit}>
               <FormItem>
                 {getFieldDecorator('password', {rules: [{ required: true, message: 'Please enter a password' }]})(
