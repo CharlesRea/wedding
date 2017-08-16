@@ -17,10 +17,7 @@ export const WeddingInfo = (props: Props) => (
 
         <ContentBox title="Where">
           <div>
-            <div>
-              We're getting married at <a href="http://olddownestate.co.uk/" target="_blank">Old Down Manor</a>, 30 minutes north of Bristol.
-            </div>
-
+            <p>We're getting married at <a href="http://olddownestate.co.uk/" target="_blank">Old Down Manor</a>, 30 minutes north of Bristol.</p>
             <address className="venue-address">
               Old Down Estate<br />
               Foxholes Lane<br />
@@ -58,8 +55,7 @@ export const WeddingInfo = (props: Props) => (
         <ContentBox title="Travel">
           <div className="parking">
             <p>If you are bringing a car, there will be plenty of parking for wedding guests in the designated wedding car park of Old Down Estate.</p>
-            <p>You will not need to park in the main Old Down car park.</p>
-            <p>An attendant will be able to direct you on the day of the wedding when you arrive at Old Down Manor.</p>
+            <p>You will not need to park in the main Old Down car park. An attendant will be able to direct you on the day of the wedding when you arrive at Old Down Manor.</p>
           </div>
           <div className="taxis">
             <p>You may wish to book a taxi home in advance. The venue has recommended the following taxi firms:</p>
@@ -87,7 +83,7 @@ export const WeddingInfo = (props: Props) => (
         {isDayGuest(props.user) &&
           <ContentBox title="Food">
             <div>
-              The Wedding Breakfast menu is as follows:
+              <p>The Wedding Breakfast menu is as follows:</p>
               <ul className="menu-options">
                 <li>Starter: Soy Glazed Quail, Endive, Dates, Juniper.</li>
                 <li>Vegetarian option: Celeriac Soup, Winter Truffle, Chives, Game Chips</li>
@@ -103,9 +99,8 @@ export const WeddingInfo = (props: Props) => (
 
         <ContentBox title="Gift List">
           <div>
-            If you can join us to celebrate our wedding day, that is a gift enough in itself!
-            However, if you would like to look at our John Lewis wedding gift list, it will be live on
-            <a href="https://www.johnlewisgiftlist.com/giftint/guestpassword?giftListNumber=716993" target="_blank">the John Lewis website</a> from 30th September 2017.
+            <p>If you can join us to celebrate our wedding day, that is a gift enough in itself!</p>
+            <p>However, if you would like to look at our John Lewis wedding gift list, it will be live on the <a href="https://www.johnlewisgiftlist.com/giftint/guestpassword?giftListNumber=716993" target="_blank">John Lewis website</a> from 30th September 2017.</p>
           </div>
         </ContentBox>
 

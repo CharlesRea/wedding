@@ -19,18 +19,17 @@
   .ContentBox {
     flex: 0 1 600px;
     margin: $wider;
+
+    p {
+      margin: 0.5em;
+    }
   }
 
   .parking {
-    padding-bottom: 1.5em;
-  }
-
-  .taxi-list {
-    padding-top: 0.5em;
+    padding-bottom: 1em;
   }
 
   .menu-options {
-    padding-top: 0.5em;
     padding-bottom: 0.5em;
   }
 }
