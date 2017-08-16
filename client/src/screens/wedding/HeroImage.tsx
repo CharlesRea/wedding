@@ -1,11 +1,11 @@
 import * as React from 'react';
 import './HeroImage.scss';
 import {WeddingSection} from "./components/WeddingSection";
-const imageSource = require('./images/heroImage.png');
+const imageSource = require('./images/heroImage.jpg');
 
 export const HeroImage = () => (
   <WeddingSection>
-    <div className="hero-image" style={{backgroundImage: `url(${imageSource}`}}>
+    <div className="hero-image">
       <div className="hero-content">
         <div className="hero-title">
           <h1>
