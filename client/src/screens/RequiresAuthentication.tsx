@@ -7,6 +7,7 @@ import * as moment from 'moment';
 
 type Props = {
   children?: ReactNode,
+  onAuthentication: (user: UserDetails) => void,
 }
 type State = {
   user: UserDetails | null,
@@ -37,6 +38,7 @@ export class RequiresAuthentication extends React.Component<Props, State> {
       clearTimeout(this.accessTokenExpiryTimerId);
     }
     this.accessTokenExpiryTimerId = window.setTimeout(this.onAccessTokenExpiry, millisecondsTillExpiry - 1000);
+    this.props.onAuthentication(userDetails);
   };
 
   onAccessTokenExpiry = () => {
