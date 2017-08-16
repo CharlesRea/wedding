@@ -3,3 +3,10 @@ authentication:
 server:
   servlet:
     context-path: /api
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/wedding
+    username: postgres
+    password: password
+    platform: POSTGRESQL
+    driver-class-name: org.postgresql.Driver

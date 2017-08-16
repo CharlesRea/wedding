@@ -3,7 +3,12 @@
 A website for our wedding, written with a Spring Boot server in Kotlin, and a React frontend in Typescript.
 
 ### Development
-Requires Node v6+, Yarn.
+Requires Node v6+, Yarn, Java 8, Postgres 9.6.
+
+To create the database, make sure the Postgres bin folder is on your path and run:
+```
+createdb -U postgres wedding
+```
 
 To run the server, run
 ```
