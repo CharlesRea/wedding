@@ -1,0 +1,20 @@
+@import "../../../styles/colours";
+@import "../../../styles/spacing";
+
+.ContentBox {
+  padding: 20px;
+  //border: 1px solid $dark-brown;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px 1px #838383;
+
+  background-color: $brown;
+  @extend %textured;
+
+  .header {
+    border-bottom: 1px solid black;
+  }
+
+  .body {
+    padding-top: $medium
+  }
+}

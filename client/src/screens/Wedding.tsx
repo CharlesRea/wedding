@@ -42,7 +42,7 @@ export class Wedding extends React.Component<WeddingProps, State> {
         </Waypoint>
         <Waypoint topOffset="30%" bottomOffset="30%" onEnter={this.onScrollIntoView('WhenAndWhere')}>
           <div>
-            <WhenAndWhere />
+            <WhenAndWhere user={this.props.user} />
           </div>
         </Waypoint>
         <Waypoint topOffset="30%" bottomOffset="30%" onEnter={this.onScrollIntoView('RSVP')}>

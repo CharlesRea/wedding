@@ -12,9 +12,6 @@ export type AccessTokenPayload = {
 }
 
 export type Role = 'DAY' | 'EVENING';
-export const rolesByApiRoleCode: { [key: string]: Role } = {
-  'ROLE_DAY': 'DAY',
-};
 
 export type UserDetails = {
   accessToken: string,
@@ -31,3 +28,5 @@ export const getRole = (payload: AccessTokenPayload): Role => {
   }
   throw new Error('Unrecognised role');
 };
+
+export const isDayGuest = (user: UserDetails) => user.role === 'DAY';

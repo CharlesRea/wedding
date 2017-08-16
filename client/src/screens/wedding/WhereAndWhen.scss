@@ -1,5 +1,26 @@
 @import "../../styles/colours";
+@import "../../styles/spacing";
 
 .WhereAndWhen {
-  background: $brown;
+  background-color: $light-brown;
+  @extend %textured;
+
+
+  .ContentBox {
+    width: 500px;
+    margin-bottom: $wider;
+  }
+
+  .parking {
+    padding-bottom: 1.5em;
+  }
+
+  .taxi-list {
+    padding-top: 0.5em;
+  }
+
+  .menu-options {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
 }
