@@ -29,7 +29,7 @@ export class Wedding extends React.Component<WeddingProps, State> {
       <div className="Wedding">
         <Menu className="menu" mode="horizontal" selectedKeys={this.state.screenInView ? [ this.state.screenInView ]: []} >
           <Menu.Item key="WhenAndWhere">
-            <a href="#WhenAndWhere"><Icon type="info-circle-o"/>Information</a>
+            <a href="#WhenAndWhere"><Icon type="info-circle-o"/>Wedding Information</a>
           </Menu.Item>
           <Menu.Item key="RSVP">
             <a href="#Rsvp"><Icon type="mail"/>RSVP</a>

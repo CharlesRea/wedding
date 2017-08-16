@@ -4,7 +4,12 @@
   .menu {
     position: fixed;
     width: 100%;
-    background: $brown;
-    border-bottom-color: $dark-brown;
+    background-color: $royal-red;
+    border-bottom-color: black;
+    @extend %textured;
+
+    .ant-menu-item > a {
+      color: white;
+    }
   }
 }
