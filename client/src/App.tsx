@@ -1,5 +1,5 @@
 import * as React from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.less';
 import {Wedding} from "./screens/Wedding";
 import {RequiresAuthentication} from "./screens/RequiresAuthentication";
 import {UserDetails} from "./models/authentication";

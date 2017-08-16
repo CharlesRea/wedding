@@ -10,6 +10,7 @@ const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeM
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
+const theme = require('../src/styles/antdTheme');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -20,6 +21,34 @@ const publicPath = '/';
 const publicUrl = '';
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
+
+const cssLoaders = [
+  require.resolve('style-loader'),
+  {
+    loader: require.resolve('css-loader'),
+    options: {
+      importLoaders: 1,
+    },
+  },
+  {
+    loader: require.resolve('postcss-loader'),
+    options: {
+      ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+      plugins: () => [
+        require('postcss-flexbugs-fixes'),
+        autoprefixer({
+          browsers: [
+            '>1%',
+            'last 4 versions',
+            'Firefox ESR',
+            'not ie < 9', // React doesn't support IE8 anyway
+          ],
+          flexbox: 'no-2009',
+        }),
+      ],
+    },
+  },
+];
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -142,6 +171,7 @@ module.exports = {
           /\.(ts|tsx)(\?.*)?$/,
           /\.css$/,
           /\.scss$/,
+          /\.less$/,
           /\.json$/,
           /\.bmp$/,
           /\.gif$/,
@@ -178,31 +208,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          require.resolve('style-loader'),
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              importLoaders: 1,
-            },
-          },
-          {
-            loader: require.resolve('postcss-loader'),
-            options: {
-              ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-              plugins: () => [
-                require('postcss-flexbugs-fixes'),
-                autoprefixer({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie < 9', // React doesn't support IE8 anyway
-                  ],
-                  flexbox: 'no-2009',
-                }),
-              ],
-            },
-          },
+          ...cssLoaders,
           {
             loader: require.resolve('sass-loader'),
             options: {
@@ -213,36 +219,20 @@ module.exports = {
       },
       {
           test: /\.css$/,
+          use: cssLoaders
+      },
+      {
+          test: /\.less$/,
           use: [
-              require.resolve('style-loader'),
-              {
-                  loader: require.resolve('css-loader'),
-                  options: {
-                      importLoaders: 1,
-                  },
-              },
-              {
-                  loader: require.resolve('postcss-loader'),
-                  options: {
-                      ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-                      plugins: () => [
-                          require('postcss-flexbugs-fixes'),
-                          autoprefixer({
-                              browsers: [
-                                  '>1%',
-                                  'last 4 versions',
-                                  'Firefox ESR',
-                                  'not ie < 9', // React doesn't support IE8 anyway
-                              ],
-                              flexbox: 'no-2009',
-                          }),
-                      ],
-                  },
-              },
-          ],
-      }
-      // ** STOP ** Are you adding a new loader?
-      // Remember to add the new extension(s) to the "url" loader exclusion list.
+            ...cssLoaders,
+            {
+              loader: require.resolve('less-loader'),
+              options: {
+                modifyVars: theme,
+              }
+            },
+          ]
+      },
     ],
   },
   plugins: [
