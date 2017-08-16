@@ -1,5 +1,6 @@
 @import "../../styles/spacing";
 @import "../../styles/colours";
+@import "../../styles/fontSizes";
 
 .hero-image {
   height: 100%;
@@ -7,7 +8,7 @@
   background-size: cover;
   background-position: 50% 25%;
   background-image:
-          linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+          linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),
           url(./images/heroImage.jpg)
 }
 
@@ -19,8 +20,9 @@
 }
 
 .hero-title {
-  padding-bottom: $medium;
-  text-shadow: 0 1px 0 black;
+  padding-bottom: 60px;
+  font-size: $large; // TODO make $huge, but make look good on mobiles
+
   h1, h2 {
     color: white;
     text-shadow: 1px 1px 0 black;

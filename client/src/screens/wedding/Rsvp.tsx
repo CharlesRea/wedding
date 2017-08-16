@@ -67,7 +67,7 @@ class Rsvp extends React.Component<RsvpFormProps, State> {
     };
 
     return (
-      <div className="Rsvp">
+      <div className="Rsvp" id="Rsvp">
         <WeddingSection>
           <SectionTitle title="RSVP"/>
           {!hasSucceeded &&
