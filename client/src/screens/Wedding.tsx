@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Menu, Icon } from 'antd';
 import {HeroImage} from "./wedding/HeroImage";
-import {WhenAndWhere} from "./wedding/WhereAndWhen";
+import {WeddingInfo} from "./wedding/WeddingInfo";
 import Rsvp from "./wedding/Rsvp";
 import {UserDetails} from "../models/authentication";
 import Waypoint = require("react-waypoint");
 import './Wedding.scss';
 
-type ScreenType = 'HeroImage' | 'WhenAndWhere' | 'RSVP';
+type ScreenType = 'HeroImage' | 'WeddingInfo' | 'RSVP';
 
 type WeddingProps = { user: UserDetails }
 type State = {
@@ -28,8 +28,8 @@ export class Wedding extends React.Component<WeddingProps, State> {
     return (
       <div className="Wedding">
         <Menu className="menu" mode="horizontal" selectedKeys={this.state.screenInView ? [ this.state.screenInView ]: []} >
-          <Menu.Item key="WhenAndWhere">
-            <a href="#WhenAndWhere"><Icon type="info-circle-o"/>Wedding Information</a>
+          <Menu.Item key="WeddingInfo">
+            <a href="#WeddingInfo"><Icon type="info-circle-o"/>Our Wedding</a>
           </Menu.Item>
           <Menu.Item key="RSVP">
             <a href="#Rsvp"><Icon type="mail"/>RSVP</a>
@@ -40,9 +40,9 @@ export class Wedding extends React.Component<WeddingProps, State> {
             <HeroImage />
           </div>
         </Waypoint>
-        <Waypoint topOffset="30%" bottomOffset="30%" onEnter={this.onScrollIntoView('WhenAndWhere')}>
+        <Waypoint topOffset="30%" bottomOffset="30%" onEnter={this.onScrollIntoView('WeddingInfo')}>
           <div>
-            <WhenAndWhere user={this.props.user} />
+            <WeddingInfo user={this.props.user} />
           </div>
         </Waypoint>
         <Waypoint topOffset="30%" bottomOffset="30%" onEnter={this.onScrollIntoView('RSVP')}>

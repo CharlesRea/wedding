@@ -4,8 +4,11 @@
 
 .Login {
   font-size: $large;
-  @extend %textured;
   background-color: $brown;
+
+  .WeddingSection {
+    height: 100vh;
+  }
 
   .login-section {
     display: flex;

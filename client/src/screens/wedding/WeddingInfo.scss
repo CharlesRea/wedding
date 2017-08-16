@@ -1,14 +1,24 @@
 @import "../../styles/colours";
 @import "../../styles/spacing";
 
-.WhereAndWhen {
+.WeddingInfo {
   background-color: $light-brown;
-  @extend %textured;
 
+  .SectionTitle {
+    padding-top: $wider;
+  }
+
+  .content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    margin: 0 $wider $wider;
+  }
 
   .ContentBox {
-    width: 500px;
-    margin-bottom: $wider;
+    flex: 0 1 600px;
+    margin: $wider;
   }
 
   .parking {

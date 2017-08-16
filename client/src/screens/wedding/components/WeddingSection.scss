@@ -1,12 +1,12 @@
 @import "../../../styles/colours";
+@import "../../../styles/spacing";
 
 .WeddingSection {
-  //height: 100vh;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  //@extend %textured;
+  @extend %textured;
 }
