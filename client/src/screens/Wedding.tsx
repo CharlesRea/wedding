@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Menu } from 'antd';
+import { Menu, Icon } from 'antd';
 import {HeroImage} from "./wedding/HeroImage";
 import {WhenAndWhere} from "./wedding/WhereAndWhen";
 import Rsvp from "./wedding/Rsvp";
@@ -29,10 +29,10 @@ export class Wedding extends React.Component<WeddingProps, State> {
       <div className="Wedding">
         <Menu className="menu" mode="horizontal" selectedKeys={this.state.screenInView ? [ this.state.screenInView ]: []} >
           <Menu.Item key="WhenAndWhere">
-            <a href="#WhenAndWhere">Information</a>
+            <a href="#WhenAndWhere"><Icon type="info-circle-o"/>Information</a>
           </Menu.Item>
           <Menu.Item key="RSVP">
-            <a href="#Rsvp">RSVP</a>
+            <a href="#Rsvp"><Icon type="mail"/>RSVP</a>
           </Menu.Item>
         </Menu>
         <Waypoint topOffset="40%" bottomOffset="40%" onEnter={this.onScrollIntoView('HeroImage')}>

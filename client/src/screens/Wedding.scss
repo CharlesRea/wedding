@@ -1,6 +1,10 @@
+@import "../styles/colours";
+
 .Wedding {
   .menu {
     position: fixed;
     width: 100%;
+    background: $brown;
+    border-bottom-color: $dark-brown;
   }
 }
