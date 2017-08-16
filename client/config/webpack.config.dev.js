@@ -10,8 +10,6 @@ const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeM
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
-const theme = require('../src/styles/antdTheme');
-
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
 const publicPath = '/';
@@ -53,6 +51,7 @@ const cssLoaders = [
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
+
 module.exports = {
   // You may want 'eval' instead if you prefer to see the compiled output in DevTools.
   // See the discussion in https://github.com/facebookincubator/create-react-app/issues/343.
@@ -228,7 +227,7 @@ module.exports = {
             {
               loader: require.resolve('less-loader'),
               options: {
-                modifyVars: theme,
+                modifyVars: require('../src/styles/antdTheme'),
               }
             },
           ]

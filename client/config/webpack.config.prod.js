@@ -43,6 +43,35 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
     { publicPath: Array(cssFilename.split('/').length).join('../') }
   : {};
 
+const cssLoaders = [
+  {
+    loader: require.resolve('css-loader'),
+    options: {
+      importLoaders: 1,
+      minimize: true,
+      sourceMap: true,
+    },
+  },
+  {
+    loader: require.resolve('postcss-loader'),
+    options: {
+      ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
+      plugins: () => [
+        require('postcss-flexbugs-fixes'),
+        autoprefixer({
+          browsers: [
+            '>1%',
+            'last 4 versions',
+            'Firefox ESR',
+            'not ie < 9', // React doesn't support IE8 anyway
+          ],
+          flexbox: 'no-2009',
+        }),
+      ],
+    },
+  },
+];
+
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
@@ -133,6 +162,7 @@ module.exports = {
           /\.(ts|tsx)$/,
           /\.css$/,
           /\.scss$/,
+          /\.less$/,
           /\.json$/,
           /\.bmp$/,
           /\.gif$/,
@@ -179,39 +209,50 @@ module.exports = {
             {
               fallback: require.resolve('style-loader'),
               use: [
+                ...cssLoaders,
                 {
-                  loader: require.resolve('css-loader'),
+                  loader: require.resolve('sass-loader'),
                   options: {
-                    importLoaders: 1,
-                    minimize: true,
-                    sourceMap: true,
+                    includePaths: ['./node_modules']
                   },
                 },
-                {
-                  loader: require.resolve('postcss-loader'),
-                  options: {
-                    ident: 'postcss', // https://webpack.js.org/guides/migrating/#complex-options
-                    plugins: () => [
-                      require('postcss-flexbugs-fixes'),
-                      autoprefixer({
-                        browsers: [
-                          '>1%',
-                          'last 4 versions',
-                          'Firefox ESR',
-                          'not ie < 9', // React doesn't support IE8 anyway
-                        ],
-                        flexbox: 'no-2009',
-                      }),
-                    ],
-                  },
-                },
-                require.resolve('sass-loader'),
               ],
             },
             extractTextPluginOptions
           )
         ),
-        // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract(
+          Object.assign(
+            {
+              fallback: require.resolve('style-loader'),
+              use: cssLoaders,
+            },
+            extractTextPluginOptions
+          )
+        ),
+      },
+      {
+        test: /\.less$/,
+        loader: ExtractTextPlugin.extract(
+          Object.assign(
+            {
+              fallback: require.resolve('style-loader'),
+              use: [
+                ...cssLoaders,
+                {
+                  loader: require.resolve('less-loader'),
+                  options: {
+                    modifyVars: require('../src/styles/antdTheme'),
+                  }
+                },
+              ],
+            },
+            extractTextPluginOptions
+          )
+        ),
       },
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "file" loader exclusion list.
