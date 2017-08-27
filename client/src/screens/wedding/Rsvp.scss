@@ -1,5 +1,51 @@
 @import "../../styles/colours";
+@import "../../styles/spacing";
 
 .Rsvp {
+  border-top: 1px solid black;
+  text-align: center;
   background: $red-brown;
+  @extend %textured;
+  color: white;
+
+  h1, h3 {
+    color: white;
+  }
+
+  .ant-form-item-label {
+    text-align: center;
+  }
+
+  .ant-form-item-label label {
+    color: white;
+    white-space: normal;
+  }
+
+  .SectionTitle {
+    padding: $medium $medium $narrow $medium;
+  }
+
+  .info-text {
+    padding-bottom: $medium;
+  }
+
+  .rsvp-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .content {
+    min-height: 500px;
+    flex: 0 1 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    margin: $medium;
+
+    .rsvp-form {
+      flex: 1 0 auto;
+    }
+  }
 }

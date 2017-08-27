@@ -4,6 +4,7 @@
   .menu {
     position: fixed;
     width: 100%;
+    z-index: 5;
     background-color: $royal-red;
     border-bottom-color: black;
     @extend %textured;

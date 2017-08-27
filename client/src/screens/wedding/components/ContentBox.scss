@@ -2,8 +2,7 @@
 @import "../../../styles/spacing";
 
 .ContentBox {
-  padding: 20px;
-  //border: 1px solid $dark-brown;
+  padding: $medium;
   border: 1px solid black;
   box-shadow: 1px 1px 1px 1px #838383;
 
@@ -11,6 +10,7 @@
   @extend %textured;
 
   .header {
+    padding-bottom: $narrower;
     border-bottom: 1px solid black;
   }
 
