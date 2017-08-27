@@ -1,6 +1,6 @@
 # Wedding website
 
-A website for our wedding, written with a Spring Boot server in Kotlin, and a React frontend in Typescript.
+A website for our wedding, written with a Spring Boot API in Kotlin, a React frontend in Typescript, and a PostgreSQL database.
 
 ### Development
 Requires Node v6+, Yarn, Java 8, Postgres 9.6.
@@ -10,7 +10,7 @@ To create the database, make sure the Postgres bin folder is on your path and ru
 createdb -U postgres wedding
 ```
 
-To run the server, run
+To run the server, run through IntelliJ, or run
 ```
 ./gradlew server:bootRun
 ```
@@ -20,9 +20,10 @@ yarn start
 ```
 
 ### Deployment
-To build an executable JAR file running the server with bundled javascript code, run
+To build and run an executable JAR file running the server with bundled javascript code, run
 ```
 ./gradlew bootJar
+java -jar .\server\build\libs\server-0.0.1-SNAPSHOT.jar
 ```
 
 ### Heroku
