@@ -24,3 +24,12 @@ To build an executable JAR file running the server with bundled javascript code,
 ```
 ./gradlew bootJar
 ```
+
+### Heroku
+The application be deployed via Heroku. To set up a Heroku application, install the Heroku CLI and run:
+```
+heroku create <appname>
+heroku buildpacks:set https://github.com/negativetwelve/heroku-buildpack-subdir
+heroku addons:create heroku-postgresql
+git push heroku master
+```
