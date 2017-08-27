@@ -20,8 +20,12 @@
     flex: 0 1 600px;
     margin: $wider;
 
+    @media (max-width: 600px) {
+      margin: $medium 0;
+    }
+
     p {
-      margin: 0.5em;
+      margin: 0.5em 0;
     }
   }
 

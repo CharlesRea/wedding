@@ -4,6 +4,7 @@ import {SectionTitle} from "./components/SectionTitle";
 import './WeddingInfo.scss';
 import {ContentBox} from "./components/ContentBox";
 import {isDayGuest, UserDetails} from "../../models/authentication";
+import {menu} from "../../models/menu";
 
 type Props = {
   user: UserDetails,
@@ -85,11 +86,11 @@ export const WeddingInfo = (props: Props) => (
             <div>
               <p>The Wedding Breakfast menu is as follows:</p>
               <ul className="menu-options">
-                <li>Starter: Soy Glazed Quail, Endive, Dates, Juniper.</li>
-                <li>Vegetarian option: Celeriac Soup, Winter Truffle, Chives, Game Chips</li>
-                <li>Main: Braised Ox Cheek, Caramelised Shallots, Red Wine, Potato and Parsley Puree</li>
-                <li>Vegetarian option: Gnocchi, Roasted Artichokes, Hazelnuts, Trompette Mushrooms, Berkswell Cheese</li>
-                <li>Dessert: Sticky Toffee Pudding Souffle, Toffee Sauce, Vanilla Ice Cream</li>
+                <li>Starter: {menu.starter}</li>
+                <li>Vegetarian option: {menu.vegStarter}</li>
+                <li>Main: {menu.main}</li>
+                <li>Vegetarian option: {menu.vegMain}</li>
+                <li>Pudding: {menu.pudding}</li>
               </ul>
               <p>An evening buffet will be provided.</p>
               <p>Please let us know your menu choices and any dietary requirements in your RSVP.</p>
