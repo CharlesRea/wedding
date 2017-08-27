@@ -5,7 +5,10 @@ const imageSource = require('./images/heroImage.jpg');
 
 export const HeroImage = () => (
   <WeddingSection>
-    <div className="hero-image">
+    <div
+      className="hero-image"
+      style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(${imageSource})`}}
+    >
       <div className="hero-content">
         <div className="hero-title">
           <h1>

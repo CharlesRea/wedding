@@ -24,12 +24,21 @@
     align-content: center;
     margin: $medium;
 
-    .SectionTitle, .info-text {
+    .info-text {
       padding-bottom: $medium;
+    }
+
+    .flower {
+      flex: 1 0 0;
+      align-self: center;
+      max-height: 40%;
+      max-width: 40%;
+      margin: $medium;
     }
 
     .login-form {
       flex: 1 0 auto;
+      padding: $medium;
     }
 
     .login-form-button {

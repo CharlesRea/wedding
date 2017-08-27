@@ -7,6 +7,7 @@ import {SectionTitle} from "./wedding/components/SectionTitle";
 import {fetchAccessToken, isApiError} from "../api";
 import {AuthenticationResponse} from "../models/authentication";
 import {ErrorText} from "./wedding/components/ErrorText";
+const flowerImage = require("./wedding/images/flower.png");
 const FormItem = Form.Item;
 
 export type LoginProps = { onObtainAccessToken: (accessToken: string) => any }
@@ -59,6 +60,7 @@ class Login extends React.Component<FormLoginProps, State> {
         <div className="login-section">
           <div className="content">
             <SectionTitle title="Harriet and Charles's wedding" />
+            <img className="flower" src={flowerImage}/>
             <div className="info-text">
               {serverError == null ? `Please log in using the password from your invite. If you've lost your password, get in touch with us.` :
                 <ErrorText>{errorText}</ErrorText>}

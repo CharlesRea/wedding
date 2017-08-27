@@ -16,7 +16,7 @@ export const WeddingInfo = (props: Props) => (
       <div className="content">
 
         <ContentBox title="The Venue">
-          <div>
+          <div className="venue">
             <p>We're getting married at <a href="http://olddownestate.co.uk/" target="_blank">Old Down Manor</a>, 30 minutes north of Bristol.</p>
             <address className="venue-address">
               Old Down Estate<br />
@@ -84,11 +84,11 @@ export const WeddingInfo = (props: Props) => (
             <div>
               <p>The Wedding Breakfast menu will be:</p>
               <ul className="menu-options">
-                <li>Starter: {menu.starter}</li>
-                <li>Vegetarian option: {menu.vegStarter}</li>
-                <li>Main: {menu.main}</li>
-                <li>Vegetarian option: {menu.vegMain}</li>
-                <li>Pudding: {menu.pudding}</li>
+                <li><span className="menu-key">Starter:</span> {menu.starter}</li>
+                <li><span className="menu-key">Vegetarian option:</span> {menu.vegStarter}</li>
+                <li><span className="menu-key">Main:</span> {menu.main}</li>
+                <li><span className="menu-key">Vegetarian option:</span> {menu.vegMain}</li>
+                <li><span className="menu-key">Pudding:</span> {menu.pudding}</li>
               </ul>
               <p>An evening buffet will be provided.</p>
               <p>Please let us know your menu choices and any dietary requirements in your RSVP.</p>
@@ -97,10 +97,11 @@ export const WeddingInfo = (props: Props) => (
         }
 
         <ContentBox title="Gift List">
-          <div>
+          <div className="gift-list">
             <p>If you can join us to celebrate our wedding day, that is a gift enough in itself!</p>
             <p>However, if you would like to look at our John Lewis wedding gift list, it will be live on the <a href="https://www.johnlewisgiftlist.com/giftint/guestpassword?giftListNumber=716993" target="_blank">John Lewis website</a> from 30th September 2017.</p>
           </div>
+          <div className="flower" />
         </ContentBox>
 
       </div>

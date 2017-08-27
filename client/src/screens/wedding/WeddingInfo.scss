@@ -30,11 +30,31 @@
     }
   }
 
+  .venue {
+    flex: 1 0 auto;
+    background-image: url(./images/flower.png);
+    background-position: bottom left;
+    background-size: 20%;
+    background-repeat: no-repeat;
+  }
+
   .parking {
     padding-bottom: 1em;
   }
 
+  .menu-key {
+    font-weight: bold;
+  }
+
   .menu-options {
     padding-bottom: 0.5em;
+  }
+
+  .flower {
+    flex: 1 0 auto;
+    background-image: url(./images/flower2.png);
+    background-position: bottom right;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
