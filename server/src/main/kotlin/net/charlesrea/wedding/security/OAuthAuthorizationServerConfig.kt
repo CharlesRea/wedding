@@ -17,6 +17,7 @@ class OAuthAuthorizationServerConfig(val authenticationManager: AuthenticationMa
 
     override fun configure(endpoints: AuthorizationServerEndpointsConfigurer) {
         endpoints
+                .pathMapping("oauth/token", "api/oauth/token")
                 .authenticationManager(authenticationManager)
                 .accessTokenConverter(accessTokenConverter())
     }

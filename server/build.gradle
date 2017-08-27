@@ -72,4 +72,4 @@ bootJar {
 
 compileJava.dependsOn(processResources)
 
-//processResources.dependsOn(':client:build') // TODO fix client build
+bootJar.dependsOn(':client:build')

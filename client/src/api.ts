@@ -39,7 +39,7 @@ export const withJsonBody = <T>(body: T) => (req: SuperAgentRequest): ApiRequest
     .send(body);
 
 export const fetchAccessToken = (password: string): Promise<AuthenticationResponse> =>
-  fetchJson(from('oauth/token', 'post'))
+  fetchJson(request.post('oauth/token'))
     .send('client_id=website')
     .send('grant_type=password')
     .send(`username=${password}`)
