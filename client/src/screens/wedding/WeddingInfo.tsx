@@ -13,10 +13,9 @@ type Props = {
 export const WeddingInfo = (props: Props) => (
   <div className="WeddingInfo" id="WeddingInfo">
     <WeddingSection>
-      <SectionTitle title="Our Wedding"/>
       <div className="content">
 
-        <ContentBox title="Where">
+        <ContentBox title="The Venue">
           <div>
             <p>We're getting married at <a href="http://olddownestate.co.uk/" target="_blank">Old Down Manor</a>, 30 minutes north of Bristol.</p>
             <address className="venue-address">
@@ -29,7 +28,7 @@ export const WeddingInfo = (props: Props) => (
           </div>
         </ContentBox>
 
-        <ContentBox title="When">
+        <ContentBox title="The Day">
           <div>
             {isDayGuest(props.user) &&
               <div>
@@ -64,7 +63,6 @@ export const WeddingInfo = (props: Props) => (
               <li>Thornbury Hire - 01454 413404</li>
               <li>Severn Side Taxis - 07879 601011</li>
               <li>Streamline - 0117 9264001</li>
-              <li>Euro Taxis - 03336 666666</li>
             </ul>
           </div>
         </ContentBox>
@@ -84,7 +82,7 @@ export const WeddingInfo = (props: Props) => (
         {isDayGuest(props.user) &&
           <ContentBox title="Food">
             <div>
-              <p>The Wedding Breakfast menu is as follows:</p>
+              <p>The Wedding Breakfast menu will be:</p>
               <ul className="menu-options">
                 <li>Starter: {menu.starter}</li>
                 <li>Vegetarian option: {menu.vegStarter}</li>
