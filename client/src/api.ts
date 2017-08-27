@@ -42,7 +42,7 @@ export const fetchAccessToken = (password: string): Promise<AuthenticationRespon
   fetchJson(request.post('oauth/token'))
     .send('client_id=website')
     .send('grant_type=password')
-    .send(`username=${password}`)
+    .send(`username=${password.substring(0, 3)}`)
     .send(`password=${password}`)
     .then(response => response.body);
 

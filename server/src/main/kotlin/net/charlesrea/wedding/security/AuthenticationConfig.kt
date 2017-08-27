@@ -6,15 +6,15 @@ import org.springframework.security.config.annotation.authentication.configurers
 
 
 @Configuration
-open class AuthenticationConfig : GlobalAuthenticationConfigurerAdapter() {
+open class AuthenticationConfig(val authenticationSettings: AuthenticationSettings) : GlobalAuthenticationConfigurerAdapter() {
     override fun init(auth: AuthenticationManagerBuilder) {
         auth.inMemoryAuthentication()
-                    .withUser("day")
-                    .password("day")
+                    .withUser(authenticationSettings.password.day.substring(0, 3))
+                    .password(authenticationSettings.password.day)
                     .roles("DAY")
                 .and()
-                    .withUser("evening")
-                    .password("evening")
+                    .withUser(authenticationSettings.password.evening.substring(0, 3))
+                    .password(authenticationSettings.password.evening)
                     .roles("EVENING")
     }
 }

@@ -10,4 +10,10 @@ import org.springframework.stereotype.Component
 @EnableConfigurationProperties
 class AuthenticationSettings {
     lateinit var key: String
+    var password: Password = Password()
+}
+
+class Password {
+    lateinit var day: String
+    lateinit var evening: String
 }

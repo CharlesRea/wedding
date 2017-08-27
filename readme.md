@@ -26,6 +26,8 @@ To build and run an executable JAR file running the server with bundled javascri
 java -jar .\server\build\libs\server-0.0.1-SNAPSHOT.jar
 ```
 
+You'll want to provide overrides for the authentication properties in application.yml as environment variables.
+
 ### Heroku
 The application be deployed via Heroku. To set up a Heroku application, install the Heroku CLI and run:
 ```
