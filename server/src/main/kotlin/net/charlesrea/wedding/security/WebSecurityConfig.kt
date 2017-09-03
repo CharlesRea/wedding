@@ -10,12 +10,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
-class WebSecurityConfig : WebSecurityConfigurerAdapter() {
+class WebSecurityConfig(val securityProperties: SecurityProperties) : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity) {
         http
             .csrf().disable()
             .httpBasic().disable()
             .authorizeRequests()
                 .anyRequest().permitAll()
+
+        if (securityProperties.isRequireSsl) {
+            http.requiresChannel().anyRequest().requiresSecure()
+        }
     }
 }
