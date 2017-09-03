@@ -67,7 +67,7 @@ class Rsvp extends React.Component<RsvpFormProps, State> {
             <div className="content">
               <SectionTitle title="RSVP"/>
               {!hasSucceeded && <h3 className="info-text">
-                Let us know if you'll be coming. Please RSVP by 26th September.
+                Let us know if you'll be coming. Please RSVP by 24th September.
               </h3>
               }
               {!hasSucceeded &&
