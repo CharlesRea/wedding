@@ -12,6 +12,7 @@ const FormItem = Form.Item;
 
 type State = {
   serverError: Error | null,
+  isAttending: boolean | null,
   isSaving: boolean,
   hasSucceeded: boolean
 }
@@ -25,6 +26,7 @@ class Rsvp extends React.Component<RsvpFormProps, State> {
     super(props, context);
     this.state = {
       serverError: null,
+      isAttending: null,
       isSaving: false,
       hasSucceeded: false,
     };
@@ -43,7 +45,7 @@ class Rsvp extends React.Component<RsvpFormProps, State> {
     this.setState({isSaving: true, hasSucceeded: false});
     sendRsvp(rsvp, this.props.user)
       .then(() => {
-        this.setState({isSaving: false, serverError: null, hasSucceeded: true});
+        this.setState({isAttending: rsvp.canAttend, isSaving: false, serverError: null, hasSucceeded: true});
       })
       .catch((error: Error) => {
         this.setState({isSaving: false, serverError: error})
@@ -114,8 +116,8 @@ class Rsvp extends React.Component<RsvpFormProps, State> {
                   </Button>
                 </Form>
               }
-              {hasSucceeded && isAttending && <div>Thanks! We look forward to seeing you on the day</div>}
-              {hasSucceeded && !isAttending && <div>Thanks! Sorry you're not going to be able to make it 😞</div>}
+              {hasSucceeded && this.state.isAttending && <div>Thanks! We look forward to seeing you on the day</div>}
+              {hasSucceeded && !this.state.isAttending && <div>Thanks! Sorry you're not going to be able to make it 😞</div>}
             </div>
           </div>
       </div>
