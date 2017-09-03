@@ -60,7 +60,6 @@ class Rsvp extends React.Component<RsvpFormProps, State> {
     };
 
     const isAttending: boolean = getFieldValue('canAttend');
-    const hasGuest: boolean = getFieldValue('hasGuest');
 
     return (
       <div className="Rsvp" id="Rsvp">
@@ -68,7 +67,7 @@ class Rsvp extends React.Component<RsvpFormProps, State> {
             <div className="content">
               <SectionTitle title="RSVP"/>
               {!hasSucceeded && <h3 className="info-text">
-                Let us know if you'll be coming. Please RSVP by ????
+                Let us know if you'll be coming. Please RSVP by 26th September.
               </h3>
               }
               {!hasSucceeded &&
@@ -78,7 +77,7 @@ class Rsvp extends React.Component<RsvpFormProps, State> {
                       Looks like something went wrong - I've probably broken the website :(. Try again, if it keeps happening then let us know.
                     </ErrorText>
                   }
-                  <FormItem {...formItemLayout} label="What's your name?">
+                  <FormItem {...formItemLayout} label="What's your name(s)?">
                     {getFieldDecorator('name', {rules: [{required: true, message: 'Please enter your name'}, { max: 200 } ]})(
                       <Input />
                     )}
@@ -103,28 +102,6 @@ class Rsvp extends React.Component<RsvpFormProps, State> {
                           <Input.TextArea autosize />
                         )}
                       </FormItem>
-                      <FormItem {...formItemLayout} label="Are you bringing a guest?">
-                        {getFieldDecorator('hasGuest', { rules: [{required: true, message: 'Please say whether you are bringing a guest'}] })(
-                          <Radio.Group className="guest-radio-group">
-                            <Radio.Button className="guest-radio-button" value={true}>Yes</Radio.Button>
-                            <Radio.Button className="guest-radio-button" value={false}>No</Radio.Button>
-                          </Radio.Group>
-                        )}
-                      </FormItem>
-                      {hasGuest &&
-                        <div>
-                          <FormItem {...formItemLayout} label="What's your guest's name?">
-                            {getFieldDecorator('guestName', {rules: [{required: true, message: `Please enter your guest's name`}, {max: 200}]})(
-                              <Input />
-                            )}
-                          </FormItem>
-                          <FormItem {...formItemLayout} label="Does your guest have any dietary requirements?">
-                            {getFieldDecorator('guestDietaryRequirements', {rules: [{max: 2000}] })(
-                              <Input.TextArea autosize />
-                            )}
-                          </FormItem>
-                        </div>
-                      }
                       <FormItem {...formItemLayout} label="Please enter any other comments or information for us">
                         {getFieldDecorator('comments', {rules: [{max: 5000}] })(
                           <Input.TextArea autosize={{ minRows: 4 }} />

@@ -11,7 +11,4 @@ data class Rsvp(
         val name: String,
         val canAttend: Boolean,
         val dietaryRequirements: String?,
-        val hasGuest: Boolean?,
-        val guestName: String?,
-        val guestDietaryRequirements: String?,
         val comments: String?)
