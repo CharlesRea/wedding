@@ -1,7 +1,7 @@
 export const menu = {
   starter: 'Soy Glazed Quail, Endive, Dates, Juniper',
   vegStarter: 'Celeriac Soup, Winter Truffle, Chives, Game Chips',
-  main: 'Braised Ox Cheek, Caramelised Shallots, Red Wine, Potato and Parsley Puree',
+  main: 'Chicken Breast, Butternut Puree, Butternut Chips, Bacon, Crispy Sage, Chicken Jus',
   vegMain: 'Gnocchi, Roasted Artichokes, Hazelnuts, Trompette Mushrooms, Berkswell Cheese',
-  pudding: 'Sticky Toffee Pudding Souffle, Toffee Sauce, Vanilla Ice Cream',
+  pudding: 'Melting Chocolate Dome, Honeycomb Popping Candy, Hazelnut Ice Cream, Salted Caramel Sauce',
 };
