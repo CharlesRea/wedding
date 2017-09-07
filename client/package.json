@@ -50,6 +50,7 @@
     "@types/react-dom": "^15.5.2",
     "@types/superagent": "^3.5.3",
     "antd": "2.12.2",
+    "es6-shim": "^0.35.3",
     "jwt-decode": "^2.2.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
