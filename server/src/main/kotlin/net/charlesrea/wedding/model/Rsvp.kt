@@ -10,5 +10,6 @@ data class Rsvp(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long,
         val name: String,
         val canAttend: Boolean,
+        val email: String?,
         val dietaryRequirements: String?,
         val comments: String?)
