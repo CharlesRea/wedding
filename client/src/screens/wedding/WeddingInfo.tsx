@@ -100,13 +100,13 @@ export const WeddingInfo = (props: Props) => (
         <ContentBox title="Gift List">
           <div className="gift-list">
             <p>If you can join us to celebrate our wedding day, that is a gift enough in itself!</p>
-            <p>However, if you would like to look at our John Lewis wedding gift list, it will be live on the <a href="https://www.johnlewisgiftlist.com/giftint/guestpassword?giftListNumber=716993" target="_blank">John Lewis website</a> from 30th September 2017.</p>
+            <p>However, if you would like to look at our John Lewis wedding gift list, it will be live on the <a href="https://www.johnlewisgiftlist.com/giftint/guestpassword?giftListNumber=123456" target="_blank">John Lewis website</a> from 30th September 2017.</p>
           </div>
           <div className="flower" />
         </ContentBox>
 
         <ContentBox title="Anything else?">
-          <p>If you would like any more info, you can include questions in the RSVP form below, you can email us at <a href="mailto: wedding@harrietandcharles.com">wedding@harrietandcharles.com</a>, or ring Harriet on 07860 817808.</p>
+          <p>If you would like any more info, you can include questions in the RSVP form below, you can email us at <a href="mailto: wedding@example.com">wedding@example.com</a>, or ring Harriet on 01234 56789.</p>
         </ContentBox>
 
       </div>

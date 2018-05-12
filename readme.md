@@ -18,6 +18,7 @@ To run the front end dev server, in /client run
 ```
 yarn start
 ```
+and open http://localhost:3000
 
 ### Deployment
 To build and run an executable JAR file running the server with bundled javascript code, run
